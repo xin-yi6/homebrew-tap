@@ -1,7 +1,6 @@
 class Zotty < Formula
   desc "Zotero in your terminal, with saves from Chrome while Zotero is closed"
   homepage "https://github.com/xin-yi6/zotty"
-  version "0.1.0"
   license "MIT"
 
   depends_on :macos
