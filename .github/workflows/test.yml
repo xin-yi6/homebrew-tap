@@ -1,0 +1,19 @@
+name: Test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [macos-latest, macos-15-intel]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - run: brew tap xin-yi6/tap
+      - run: brew install xin-yi6/tap/zotty
+      - run: brew test xin-yi6/tap/zotty
+      - run: brew audit --strict --online xin-yi6/tap/zotty
+      - run: zotty version && zotty help | head -3

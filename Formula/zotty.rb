@@ -6,11 +6,10 @@ class Zotty < Formula
 
   depends_on :macos
 
-  on_arm do
+  if Hardware::CPU.arm?
     url "https://github.com/xin-yi6/zotty/releases/download/v0.1.0/zotty_darwin_arm64.tar.gz"
     sha256 "399e91f377134e7feb70633831c6071deae76c858c9cb9fb038672ea8e77763e"
-  end
-  on_intel do
+  else
     url "https://github.com/xin-yi6/zotty/releases/download/v0.1.0/zotty_darwin_x86_64.tar.gz"
     sha256 "34e5e178f62a8a8b26c12820855b53a4932e4de2b2aaa3c2ec9e73073839ee86"
   end
